@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 
-class PageList extends Component {
+class Notfound extends Component {
 	login =() =>{
 	}
 	render() {
 		return (
 			<div>
-				PageList
+				Notfound
 			</div>
 		)
 	}
 }
 
 
-export default PageList;
+export default Notfound;

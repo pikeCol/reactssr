@@ -52,7 +52,7 @@ export function update(data) {
 	return dispatch=>{
 		axios.post('/api/user/update',data)
 			.then(res=>{
-				if (res.data.status==200) {
+				if (res.data.status===200) {
 					dispatch(authSuccess(res.data.data))
 				} else {
 					dispatch(errorMsg(res.data.msg))
@@ -68,7 +68,7 @@ export function login ({username,password}) {
 		axios.post('/api/user/login',{username,password})
 			.then(res=>{
 				console.log(res)
-				if (res.data.status==200) {
+				if (res.data.status===200) {
 					dispatch(authSuccess(res.data.data))
 				} else {
 					dispatch(errorMsg(res.data.msg))

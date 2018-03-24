@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, compose } from 'redux'
-import { BrowserRouter, Link, Route, Redirect, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import reducers from './reducer'
@@ -9,6 +9,7 @@ import reducers from './reducer'
 import './index.css';
 import Login from './pages/login';
 import PageList from './pages/pagelist';
+import Notfound from './pages/404';
 // import registerServiceWorker from './registerServiceWorker';
 const store = createStore( reducers, compose(
   applyMiddleware(thunk),
@@ -18,12 +19,11 @@ const store = createStore( reducers, compose(
 ReactDOM.render(
   (<Provider store={store}>
     <BrowserRouter>
-      <div>
-        <Auth></Auth>
+      <div id="app">
         <Switch>
           <Route exact path="/" component={Login}></Route>
-          <Route path="/list" component={PageList}></Route>
-
+          <Route path="/pagelist" component={PageList}></Route>
+          <Route path="*" component={Notfound}></Route>
         </Switch>
       </div>
     </BrowserRouter>

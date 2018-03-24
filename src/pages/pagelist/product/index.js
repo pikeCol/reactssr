@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 
-class PageList extends Component {
+class Product extends Component {
 	login =() =>{
 	}
 	render() {
 		return (
 			<div>
-				PageList
+				Product
 			</div>
 		)
 	}
 }
 
 
-export default PageList;
+export default Product;
