@@ -8,8 +8,7 @@ class Product extends Component {
       {
         title: 'Name',
         dataIndex: 'name',
-        key: 'name',
-        render: text => <a href="#">{text}</a>
+        key: 'name'
       }, {
         title: 'Age',
         dataIndex: 'age',
@@ -22,12 +21,12 @@ class Product extends Component {
         title: 'Action',
         key: 'action',
         render: (text, record) => (<span>
-          <a href="#">Action 一 {record.name}</a>
+          <a href="#">编辑</a>
           <Divider type="vertical"/>
-          <a href="#">Delete</a>
+          <a href="#">删除</a>
           <Divider type="vertical"/>
           <a href="#" className="ant-dropdown-link">
-            More actions
+            上架
           </a>
         </span>)
       }
@@ -51,7 +50,8 @@ class Product extends Component {
       }
     ];
     return (<div>
-      <Table columns={columns} dataSource={data} />
+      <div className="search"></div>
+      <Table columns={columns} dataSource={data}/>
     </div>)
   }
 }
